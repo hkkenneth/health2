@@ -1,0 +1,6 @@
+# Robots.txt file
+
+User-agent: *
+Disallow: /index.html
+
+Sitemap: http://health.winginno.com/sitemap.xml
