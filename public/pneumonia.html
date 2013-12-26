@@ -52,10 +52,17 @@ background-color: transparent;
 max-width: 800px;
 }
 </style>
+<script>
+var clickCount = {
+    'survey-clicked': 0
+  , 'wash-opened': 0
+  , 'physio-opened': 0
+};
+</script>
 <body id="pne-body" data-spy="scroll" data-target="#pne-sidebar-nav" data-offset="100">
     <!-- header -->
     <div id="pne-header" class="navbar navbar-primary navbar-fixed-top" style="min-height:30px;">
-        <h5 style="color: white; font-weight: 200;" class="text-right">如果對本網站的內容有任何意見，歡迎到透過<a href="#" onclick="$('#pne-modal-survey').modal();">這個表格</a>提出。</h5>
+        <h5 style="color: white; font-weight: 200;" class="text-right">如果對本網站的內容有任何意見，歡迎到透過<a href="javaScript:void(0);" onclick="$('#pne-modal-survey').modal();clickCount['survey-clicked']++;ga('send','event','pne','survey','clicked', clickCount['survey-clicked']);" style="color: yellow;"><strong>這個表格</strong></a>提出。</h5>
     </div>
 
     <!-- content -->
@@ -351,7 +358,7 @@ max-width: 800px;
                                     <p>
                                     一般人應先接受物理治療師的評估才進行排痰治療，而骨質疏鬆症及癌症病人並不適合進行排痰治療。
                                     </p>
-                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#pne-modal-chest-physio">
+                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#pne-modal-chest-physio" onclick="clickCount['physio-opened']++;ga('send','event','pne','modal-physio','opened', clickCount['physio-opened']);">
                                     示範影片
                                     </button>
                                 </div>
@@ -412,7 +419,7 @@ max-width: 800px;
                                     用肥皂和水以正確方法洗手，或使用基於酒精的免水洗手液。
                                     </p>
                                     <!-- Button trigger modal -->
-                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#pne-modal-wash-hands">
+                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#pne-modal-wash-hands" onclick="clickCount['wash-opened']++;ga('send','event','pne','modal-wash','opened', clickCount['wash-opened']);">
                                     示範影片
                                     </button>
                                 </div>
